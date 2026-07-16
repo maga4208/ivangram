@@ -9,7 +9,7 @@ workflows:
           brew install xcodegen
       - name: Download TDLibFramework
         script: |
-          curl -L -o TDLibFramework.xcframework.zip https://github.com/Swiftgram/TDLibFramework/releases/download/1.8.66/TDLibFramework.xcframework.zip
+          curl -L -o TDLibFramework.xcframework.zip https://github.com/Swiftgram/TDLibFramework/releases/download/1.8.66-1b08c83b/TDLibFramework.xcframework.zip
           unzip TDLibFramework.xcframework.zip
           mkdir -p Frameworks
           mv TDLibFramework.xcframework Frameworks/
