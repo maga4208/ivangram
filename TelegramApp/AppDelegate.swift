@@ -1,4 +1,5 @@
 import UIKit
+import TDLibKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
