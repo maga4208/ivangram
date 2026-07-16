@@ -9,10 +9,11 @@ targets:
     platform: iOS
     sources: [TelegramApp]
     dependencies:
-      - package: TDLibKit
-        product: TDLibKit
+      - framework: Frameworks/TDLibFramework.xcframework
     settings:
-      usePackageSupport: true
+      FRAMEWORK_SEARCH_PATHS: $(inherited) $(PROJECT_DIR)/Frameworks
+      HEADER_SEARCH_PATHS: $(inherited) $(PROJECT_DIR)/Frameworks/TDLibFramework.xcframework/Headers
+      OTHER_LDFLAGS: $(inherited) -framework TDLibFramework
     info:
       path: TelegramApp/Info.plist
       properties:
@@ -26,7 +27,3 @@ targets:
         CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
         CFBundleName: ivangram
         CFBundleDisplayName: ivangram
-packages:
-  TDLibKit:
-    url: https://github.com/Swiftgram/TDLibKit
-    branch: main
