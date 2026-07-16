@@ -4,21 +4,9 @@ workflows:
     environment:
       xcode: latest
     scripts:
-      - name: Install xcodegen
-        script: |
-          brew install xcodegen
-      - name: Download TDLibFramework
-        script: |
-          curl -L -o TDLibFramework.xcframework.zip https://github.com/Swiftgram/TDLibFramework/releases/download/1.8.66-1b08c83b/TDLibFramework.xcframework.zip
-          unzip TDLibFramework.xcframework.zip
-          mkdir -p Frameworks
-          mv TDLibFramework.xcframework Frameworks/
-      - name: Generate Xcode project
-        script: |
-          xcodegen generate
       - name: Build app
         script: |
-          xcodebuild -project ivangram.xcodeproj -scheme ivangram -configuration Release -destination "generic/platform=iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO SYMROOT=build build
+          xcodebuild -scheme ivangram -configuration Release -destination "generic/platform=iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO SYMROOT=build build
       - name: Create IPA
         script: |
           mkdir -p Payload
