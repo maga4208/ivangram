@@ -1,0 +1,23 @@
+name: ivangram
+options:
+  bundleIdPrefix: com.maga4208
+  deploymentTarget:
+    iOS: 15.0
+targets:
+  ivangram:
+    type: application
+    platform: iOS
+    sources: [TelegramApp]
+    info:
+      path: TelegramApp/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleName: ivangram
+        CFBundleDisplayName: ivangram

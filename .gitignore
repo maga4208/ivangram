@@ -1,0 +1,9 @@
+.DS_Store
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+*.xcodeproj
+build/
+*.ipa
+*.zip
+Frameworks/
